@@ -1,0 +1,37 @@
+#include <Keyboard.h>
+
+// USTAWIENIE ZMIENNYCH / PINÓW
+
+const int osutapa = 2;
+const int osutapb = 3;
+
+void setup()
+{
+
+// TUTAJ TRZEBA DODAĆ NOWĄ LINIJKĘ DLA KAŻDEGO NOWEGO KLAWISZA
+
+pinMode(osutapa, INPUT_PULLUP);
+pinMode(osutapb, INPUT_PULLUP);
+Keyboard.begin();
+
+}
+
+
+void loop()
+{
+
+// KLAWISZ 1
+
+if (digitalRead(osutapa) == LOW)
+Keyboard.press('z');
+else
+Keyboard.release('z');
+
+// KLAWISZ 2
+
+if (digitalRead(osutapb) == LOW)
+Keyboard.press('x');
+else
+Keyboard.release('x');
+
+}
